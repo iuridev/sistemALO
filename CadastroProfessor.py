@@ -39,7 +39,7 @@ class CadastroProfessor:
             return
 
         try:
-            workbook = openpyxl.load_workbook("alunos.xlsx")
+            workbook = openpyxl.load_workbook("professores.xlsx")
             sheet = workbook.active
         except FileNotFoundError:
             workbook = openpyxl.Workbook()
@@ -49,9 +49,9 @@ class CadastroProfessor:
 
         id_professor = sheet.max_row
         sheet.append([id_professor, nome, rg, cpf, data_cadastro])
-        workbook.save("alunos.xlsx")
+        workbook.save("professores.xlsx")
 
-        messagebox.showinfo("Sucesso", "Aluno cadastrado com sucesso!")
+        messagebox.showinfo("Sucesso", "Professor cadastrado com sucesso!")
         self.nome_entry.delete(0, tk.END)
         self.rg_entry.delete(0, tk.END)
         self.cpf_entry.delete(0, tk.END)

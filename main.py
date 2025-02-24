@@ -3,6 +3,7 @@ from tkinter import ttk
 from PIL import Image, ImageTk  # Importe Image e ImageTk do Pillow
 from CadastroAluno import CadastroAluno
 from CadastroProfessor import CadastroProfessor
+from CadastroEletiva import CadastroEletiva
 
 
 class InterfacePrincipal:
@@ -68,9 +69,7 @@ class InterfacePrincipal:
 
     def abrir_cadastro_eletiva(self):
         nova_janela = tk.Toplevel(self.root)
-        nova_janela.title("Cadastro de Eletiva")
-        label = ttk.Label(nova_janela, text="Interface de Cadastro de Eletiva")
-        label.pack(padx=20, pady=20)
+        app_cadastro = CadastroEletiva(nova_janela)
 
     def abrir_cadastro_clube(self):
         nova_janela = tk.Toplevel(self.root)
