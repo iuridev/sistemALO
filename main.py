@@ -4,6 +4,7 @@ from PIL import Image, ImageTk  # Importe Image e ImageTk do Pillow
 from CadastroAluno import CadastroAluno
 from CadastroProfessor import CadastroProfessor
 from CadastroEletiva import CadastroEletiva
+from CadastroClube import CadastroClube
 
 
 class InterfacePrincipal:
@@ -73,9 +74,7 @@ class InterfacePrincipal:
 
     def abrir_cadastro_clube(self):
         nova_janela = tk.Toplevel(self.root)
-        nova_janela.title("Cadastro de Clube")
-        label = ttk.Label(nova_janela, text="Interface de Cadastro de Clube")
-        label.pack(padx=20, pady=20)
+        app_cadastro = CadastroClube(nova_janela)
 
     def abrir_cadastro_turma(self):
         nova_janela = tk.Toplevel(self.root)
