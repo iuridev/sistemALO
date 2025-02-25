@@ -39,7 +39,7 @@ class CadastroAluno:
             return
 
         try:
-            workbook = openpyxl.load_workbook("alunos.xlsx")
+            workbook = openpyxl.load_workbook("database\\cadasdroAlunos.xlsx")
             sheet = workbook.active
         except FileNotFoundError:
             workbook = openpyxl.Workbook()
@@ -49,7 +49,7 @@ class CadastroAluno:
 
         id_aluno = sheet.max_row
         sheet.append([id_aluno, nome, ra, registro, data_cadastro])
-        workbook.save("alunos.xlsx")
+        workbook.save("database\\cadasdroAlunos.xlsx")
 
         messagebox.showinfo("Sucesso", "Aluno cadastrado com sucesso!")
         self.nome_entry.delete(0, tk.END)

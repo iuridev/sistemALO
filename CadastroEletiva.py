@@ -33,7 +33,7 @@ class CadastroEletiva:
             return
 
         try:
-            workbook = openpyxl.load_workbook("eletivas.xlsx")
+            workbook = openpyxl.load_workbook("database\\eletivas.xlsx")
             sheet = workbook.active
         except FileNotFoundError:
             workbook = openpyxl.Workbook()
@@ -43,7 +43,7 @@ class CadastroEletiva:
 
         id_eletiva = sheet.max_row
         sheet.append([id_eletiva, nome, series, data_cadastro])
-        workbook.save("eletivas.xlsx")
+        workbook.save("database\\eletivas.xlsx")
 
         messagebox.showinfo("Sucesso", "Eletiva cadastrada com sucesso!")
         self.nome_entry.delete(0, tk.END)

@@ -5,6 +5,7 @@ from CadastroAluno import CadastroAluno
 from CadastroProfessor import CadastroProfessor
 from CadastroEletiva import CadastroEletiva
 from CadastroClube import CadastroClube
+from CadastroTurma import CadastroTurma
 
 
 class InterfacePrincipal:
@@ -78,9 +79,7 @@ class InterfacePrincipal:
 
     def abrir_cadastro_turma(self):
         nova_janela = tk.Toplevel(self.root)
-        nova_janela.title("Cadastro de Turma")
-        label = ttk.Label(nova_janela, text="Interface de Cadastro de Turma")
-        label.pack(padx=20, pady=20)
+        app_cadastro = CadastroTurma(nova_janela)
 
     def abrir_pesquisa_aluno(self):
         nova_janela = tk.Toplevel(self.root)

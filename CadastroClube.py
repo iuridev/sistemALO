@@ -33,7 +33,7 @@ class CadastroClube:
             return
 
         try:
-            workbook = openpyxl.load_workbook("clubes.xlsx")
+            workbook = openpyxl.load_workbook("database\\clubes.xlsx")
             sheet = workbook.active
         except FileNotFoundError:
             workbook = openpyxl.Workbook()
@@ -43,7 +43,7 @@ class CadastroClube:
 
         id_clube = sheet.max_row
         sheet.append([id_clube, nome, series, data_cadastro])
-        workbook.save("clubes.xlsx")
+        workbook.save("database\\clubes.xlsx")
 
         messagebox.showinfo("Sucesso", "Clube cadastrado com sucesso!")
         self.nome_entry.delete(0, tk.END)
