@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Tutorias</title>
+</head>
+<body>
+    <h1>Lista de Tutorias</h1>
+    <ul>
+        {% for tutoria in tutorias %}
+        <li>Aluno: {{ tutoria.aluno.nome }} - Professor: {{ tutoria.professor.nome }} - Disciplina: {{ tutoria.disciplina.nome }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'cadastrar_tutoria' %}">Cadastrar nova tutoria</a>
+</body>
+</html>

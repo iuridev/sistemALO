@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Disciplinas</title>
+</head>
+<body>
+    <h1>Lista de Disciplinas</h1>
+    <ul>
+        {% for disciplina in disciplinas %}
+        <li>{{ disciplina.nome }} - Professor: {{ disciplina.professor.nome }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'cadastrar_disciplina' %}">Cadastrar nova disciplina</a>
+</body>
+</html>
